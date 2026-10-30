@@ -1,0 +1,27 @@
+{
+  "name": "sistem-nilai-zero-trust",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Tugas Praktikum Zero Trust Security - Sistem Nilai (API Gateway sebagai PEP)",
+  "scripts": {
+    "seed": "node db/seed.js",
+    "start": "node scripts/start-all.js",
+    "gateway": "node gateway/index.js",
+    "nilai": "node services/nilai/index.js",
+    "transkrip": "node services/transkrip/index.js",
+    "postman:build": "node postman/build-collection.js",
+    "test": "newman run postman/Zero-Trust-Sistem-Nilai.postman_collection.json -e postman/Zero-Trust-Sistem-Nilai.postman_environment.json --reporters cli"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.10.0",
+    "express": "^4.21.2",
+    "http-proxy-middleware": "^2.0.7",
+    "jsonwebtoken": "^9.0.2"
+  },
+  "devDependencies": {
+    "newman": "^6.2.1"
+  }
+}
